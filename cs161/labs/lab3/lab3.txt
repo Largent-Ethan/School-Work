@@ -1,0 +1,16 @@
+rm - remove directory
+cp - copy directory
+mv - move/rename directory
+man - pull up a manual for the given command
+
+Password Generator Design:
+	Set run as true and put the rest of main in while run is true
+	Have all of the inputs in a while loop
+	Check inputs using if statements and set valid to false, print an error, and break when its a bad input
+	If all of the checks made with if pass then set valid to true and break
+	If valid is true after inputs then run the password generator with thier given inputs
+		The generator will loop for the length of the password
+		Use ifs to check what character options are available
+		Randomly find a number in range of the character options
+		Randomly find a number in ascii range of that character option and print it without ending the line
+	At the end ask if they would like to type another password in which you set run as true
