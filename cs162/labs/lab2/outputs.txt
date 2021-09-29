@@ -1,0 +1,16 @@
+199822007 Josh Lyman Law
+199922004 Sam Seaborn Law
+199922006 Toby Ziegler Communications
+199922007 C.J. Cregg Political_Science
+200722013 Walter Bishop General_Sciences
+200822013 Olivia Dunham Criminal_Justice
+200922015 Leslie Knope Public_and_Environmental_Affairs
+
+200722013 Walter Bishop General_Sciences
+199922007 C.J. Cregg Political_Science
+200822013 Olivia Dunham Criminal_Justice
+200922015 Leslie Knope Public_and_Environmental_Affairs
+199822007 Josh Lyman Law
+199922004 Sam Seaborn Law
+199922006 Toby Ziegler Communications
+
