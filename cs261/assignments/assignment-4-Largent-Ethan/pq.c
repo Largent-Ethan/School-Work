@@ -4,8 +4,8 @@
  * you need in this file to implement a priority queue.  Make sure to add your
  * name and @oregonstate.edu email address below:
  *
- * Name:
- * Email:
+ * Name: Ethan Largent
+ * Email: largenet@oregonstate.edu
  */
 
 #include <stdlib.h>

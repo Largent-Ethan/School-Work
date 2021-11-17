@@ -3,8 +3,8 @@
  * expensive paths in the graph defined in `airports.dat`.  Don't forget to
  * include your name and @oregonstate.edu email address below.
  *
- * Name:
- * Email:
+ * Name: Ethan Largent
+ * Email: largenet@oregonstate.edu
  */
 
 #include <stdio.h>
