@@ -1,0 +1,4 @@
+*.o
+test_bst
+test_bst_iterator
+*.dSYM
