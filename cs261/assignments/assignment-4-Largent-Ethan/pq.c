@@ -9,15 +9,24 @@
  */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "pq.h"
 #include "dynarray.h"
+
+struct pq_node{
+  void* val;
+  int p;
+};
 
 /*
  * This is the structure that represents a priority queue.  You must define
  * this struct to contain the data needed to implement a priority queue.
  */
-struct pq;
+
+struct pq{
+  struct dynarray* data;
+};
 
 
 /*
@@ -25,7 +34,9 @@ struct pq;
  * return a pointer to it.
  */
 struct pq* pq_create() {
-  return NULL;
+  struct pq* pq = malloc(sizeof(struct pq));
+  pq->data = dynarray_create();
+  return pq;
 }
 
 
@@ -38,6 +49,8 @@ struct pq* pq_create() {
  *   pq - the priority queue to be destroyed.  May not be NULL.
  */
 void pq_free(struct pq* pq) {
+  dynarray_free(pq->data);
+  free(pq);
   return;
 }
 
@@ -54,9 +67,26 @@ void pq_free(struct pq* pq) {
  *   Should return 1 if pq is empty and 0 otherwise.
  */
 int pq_isempty(struct pq* pq) {
+  if(dynarray_size(pq->data) > 0)
+    return 0;
   return 1;
 }
 
+void pq_swap(struct dynarray* data, int idx1, int idx2){
+  void* to_swap = dynarray_get(data, idx2);
+  dynarray_set(data, idx2, dynarray_get(data, idx1));
+  dynarray_set(data, idx1, to_swap);
+  return;
+}
+
+void pq_balance_up(struct dynarray* data, int cidx, int pidx){
+  if(((struct pq_node*)dynarray_get(data, pidx))->p > ((struct pq_node*)dynarray_get(data, cidx))->p){
+    pq_swap(data, cidx, pidx);
+    return pq_balance_up(data, pidx, (pidx - 1) / 2);
+  }
+  else
+    return;
+}
 
 /*
  * This function should insert a given element into a priority queue with a
@@ -76,6 +106,12 @@ int pq_isempty(struct pq* pq) {
  *     be the FIRST one returned.
  */
 void pq_insert(struct pq* pq, void* value, int priority) {
+  printf("%d, ", priority);
+  struct pq_node* node = malloc(sizeof(struct pq_node));
+  node->val = value;
+  node->p = priority;
+  dynarray_insert(pq->data, node);
+  pq_balance_up(pq->data, dynarray_size(pq->data) - 1, (dynarray_size(pq->data) - 2) / 2);
   return;
 }
 
@@ -93,7 +129,7 @@ void pq_insert(struct pq* pq, void* value, int priority) {
  *   LOWEST priority value.
  */
 void* pq_first(struct pq* pq) {
-  return NULL;
+  return ((struct pq_node*)(dynarray_get(pq->data, 0)))->val;
 }
 
 
@@ -110,9 +146,23 @@ void* pq_first(struct pq* pq) {
  *   with LOWEST priority value.
  */
 int pq_first_priority(struct pq* pq) {
-  return 0;
+  return ((struct pq_node*)(dynarray_get(pq->data, 0)))->p;
 }
 
+void pq_balance_down(struct dynarray* data, int index){
+  if(index * 2 + 1 <= (dynarray_size(data) - 1)){
+    if(((struct pq_node*)dynarray_get(data, index * 2 + 1))->p < ((struct pq_node*)dynarray_get(data, index))->p){
+      pq_swap(data, index, index * 2 + 1);
+      pq_balance_down(data, index * 2 + 1);
+    }
+  if(index * 2 + 2 <= (dynarray_size(data) - 1))
+    if(((struct pq_node*)dynarray_get(data, index * 2 + 2))->p < ((struct pq_node*)dynarray_get(data, index))->p){
+      pq_swap(data, index, index * 2 + 2);
+      pq_balance_down(data, index * 2 + 2);
+    }
+  }
+  return;
+}
 
 /*
  * This function should return the value of the first item in a priority
@@ -128,5 +178,9 @@ int pq_first_priority(struct pq* pq) {
  *   LOWEST priority value.
  */
 void* pq_remove_first(struct pq* pq) {
-  return NULL;
+  void* value = pq_first(pq);
+  dynarray_set(pq->data, 0, dynarray_get(pq->data, dynarray_size(pq->data) - 1));
+  dynarray_remove(pq->data, dynarray_size(pq->data) - 1);
+  pq_balance_down(pq->data, 0);
+  return value;
 }
