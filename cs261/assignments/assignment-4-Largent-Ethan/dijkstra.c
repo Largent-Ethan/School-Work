@@ -8,15 +8,48 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "pq.h"
+#include "dynarray.h"
 
 #define DATA_FILE "airports.dat"
 #define START_NODE 0
 
+
 int main(int argc, char const *argv[]) {
-  /*
-   * Write your code here to read the file `airports.dat` and to find the
-   * least-cost paths from node 0 to all other nodes in the graph.  Make sure
-   * to print out the least-cost paths you find at the end.
-   */
+
+  FILE* fp;
+  int size, paths;
+  fp = fopen("airports.dat", "r");
+  fscanf(fp, "%d", &size);
+  int map[size][size];
+  for(int i = 0; i < size; i++)
+    for(int j = 0; j < size; j++)
+      map[i][j] = 0;
+  fscanf(fp, "%d", &paths);
+  for(int i = 0; i < paths; i++){
+    int start, end, cost;
+    fscanf(fp, "%d", &start);
+    fscanf(fp, "%d", &end);
+    fscanf(fp, "%d", &cost);
+    map[start][end] = cost;
+  }
+  fclose(fp);
+
+  printf("S  E");
+  for(int i = 0; i < size; i++)
+    printf("%3d:  ", i);
+  printf("\n");
+  for(int i = 0; i < size; i++){
+    printf("%d: ", i);
+    for(int j = 0; j < size; j++){
+      printf(" %3d |", map[i][j]);
+    }
+    printf("\n");
+  }
+  printf("\nwell, well, well... what to do now...\n\n");
+
+
   return 0;
 }

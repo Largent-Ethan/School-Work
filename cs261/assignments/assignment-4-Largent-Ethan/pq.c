@@ -9,7 +9,6 @@
  */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "pq.h"
 #include "dynarray.h"
@@ -18,6 +17,13 @@ struct pq_node{
   void* val;
   int p;
 };
+
+struct pq_node* pq_node_create(void* value, int priority){
+  struct pq_node* node = malloc(sizeof(struct pq_node));
+  node->val = value;
+  node->p = priority;
+  return node;
+}
 
 /*
  * This is the structure that represents a priority queue.  You must define
@@ -106,11 +112,7 @@ void pq_balance_up(struct dynarray* data, int cidx, int pidx){
  *     be the FIRST one returned.
  */
 void pq_insert(struct pq* pq, void* value, int priority) {
-  printf("%d, ", priority);
-  struct pq_node* node = malloc(sizeof(struct pq_node));
-  node->val = value;
-  node->p = priority;
-  dynarray_insert(pq->data, node);
+  dynarray_insert(pq->data, pq_node_create(value, priority));
   pq_balance_up(pq->data, dynarray_size(pq->data) - 1, (dynarray_size(pq->data) - 2) / 2);
   return;
 }
