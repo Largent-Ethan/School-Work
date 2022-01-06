@@ -11,7 +11,7 @@ g++ mergesort.cpp -std=c++11 -o mergesort
 ./mergesort > merge.txt
 ./mergesort
 echo
-echo "Correctly sotred data"
+echo "Correctly sorted data"
 cat sorted.txt
 echo
 
