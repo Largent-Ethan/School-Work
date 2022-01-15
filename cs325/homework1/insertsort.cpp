@@ -1,15 +1,18 @@
 #include <iostream>
 #include <fstream>
+#include <stdlib.h>
 
 using namespace std;
 
 int main(){
 //Insert into array
     ifstream input_file("data.txt", ios::in);
+    char* read_size;
     int size = 0;
     
     while(input_file.eof() == 0){
-        input_file >> size;
+        input_file >> read_size;
+        size = atoi(read_size);
         int array[size];
         for(int i = 0; i < size; i++)
             input_file >> array[i];
@@ -34,5 +37,6 @@ int main(){
             cout << " " << array[i];
         cout << endl;
     }
+    input_file.close();
     return 0;
 }

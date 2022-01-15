@@ -1,11 +1,14 @@
 #include <iostream>
+#include <fstream>
 #include <time.h>
 
 using namespace std;
 
 int main(int argc, char** argv){
 //Create Random Array
+    ofstream output_file("timings.tsv");
     srand(time(NULL));
+
     for(int arnum = 1; arnum < argc; arnum++){
         int size = atoi(argv[arnum]);
         int array[size];
@@ -31,7 +34,11 @@ int main(int argc, char** argv){
 //End Time
         clock_t timer_end = clock();
 //Output
-        printf(" == Size : %d\n    Time: %.3f\n", size, double(timer_end - timer_start) / CLOCKS_PER_SEC);
+        double time = double(timer_end - timer_start) / CLOCKS_PER_SEC;
+        printf(" == Size : %d\n    Time: %.3f\n", size, time);
+        output_file << size << " " << time << "\n";
     }
+    output_file << "\n";
+    output_file.close();
     return 0;
 }

@@ -21,9 +21,13 @@ diff -y -B -b --report-identical-files --suppress-common-lines merge.txt sorted.
 echo
 echo "Insertion Sort times"
 g++ insertTime.cpp -std=c++11 -o insertTime
-./insertTime 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000 #Add array sizes here
+./insertTime 5000 10000 15000 20000 25000 30000 40000 50000 #Add array sizes here
 echo
 echo "Merge Sort times"
 g++ mergeTime.cpp -std=c++11 -o mergeTime
-./mergeTime 10000 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000 #Add array sizes here
+./mergeTime 5000 10000 15000 20000 25000 30000 40000 50000 #Add array sizes here
 
+echo "Graphed timings are found in plot.jpg"
+generate_plot_from_tsv
+
+rm merge.txt mergeTime mergesort insert.txt insertTime insertsort
