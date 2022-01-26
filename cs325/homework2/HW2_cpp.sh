@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Knapsack DP vs Recursive"
 g++ knapsack.cpp -std=c++11 -o knapsack
-./knapsack
+./knapsack #max item value, max item weight, num items in scenario 1, knapsack weight in scenario 1, num items in scenario 2, weight in scenario 2, etc.
 
 echo "Shopping Spree"
 echo
@@ -14,4 +14,4 @@ echo "Comparing results "
 diff -y -B -b --report-identical-files --suppress-common-lines my_results.txt HW2Solution.txt
 echo
 
-
+rm knapsack shopping my_results.txt
