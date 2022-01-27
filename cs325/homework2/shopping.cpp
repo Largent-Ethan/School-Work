@@ -13,7 +13,7 @@ struct item{
 struct results{
     int max = 0;
     int num_items = 0;
-    int items[63];
+    int items[63];//im sorry, lets just assume people cannot hold more than 63 things...
 };
 
 
