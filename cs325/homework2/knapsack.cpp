@@ -2,6 +2,7 @@
 #include <time.h>
 #include <fstream>
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
@@ -37,7 +38,8 @@ struct results rec_ks(int* val, int* wt, int w, int n){
 struct results dyn_prog_ks(int* val, int* wt, int w, int n){
     struct results results;
     clock_t timer_start = clock();
-    int max_arr[w + 1][n + 1];
+    vector<vector<int> > max_arr(w + 1, vector<int> (n + 1));
+    //int max_arr[w + 1][n + 1];
     for(int i = 0; i <= w; i++)
         max_arr[i][0] = 0;
     for(int i = 0; i <= n; i++)
@@ -80,15 +82,15 @@ int main(int argc, char** argv){
         n = atoi(argv[argnum]);
         w = atoi(argv[argnum + 1]);
 //Create Random Arrays
-        int val[n];
-        int wt[n];
+        int* val = new int[n];
+        int* wt = new int[n];
         for(int i = 0; i < n; i++){
             val[i] = rand() % max_v + 1;
             wt[i] = rand() % max_w + 1;
         }
 //Run Algorithms
         struct results rec_results = rec_ks(val, wt, w, n);
-        struct results dyn_prog_results = dyn_prog_ks(val, wt, w, n);
+        struct results dyn_prog_results;// = dyn_prog_ks(val, wt, w, n);
 //Print Results
         printf("\n\n == N:%5d | W:%5d | Rec time:%5.2f | DP time:%5.2f | max Rec:%5d | max DP:%5d\n",
                 n, w, rec_results.time , dyn_prog_results.time , rec_results.max , dyn_prog_results.max);
@@ -99,6 +101,10 @@ int main(int argc, char** argv){
             printf("            %3d: %3d - %3d\n",
             i, wt[i], val[i]);
 */
+        delete[] val;
+        delete[] wt;
     }
     return 0;
 }
+
+//use dynamically allocated memory for the DP algorithm and val/wt arrays
