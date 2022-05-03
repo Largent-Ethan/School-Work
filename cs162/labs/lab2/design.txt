@@ -1,0 +1,25 @@
+student* create_student_db(int)
+    create a dynamic array of size on first line
+    return array
+
+void get_student_db_info(student *, int, ifstream &)
+    loop through entire array
+        fill each part of struct in order they appear on each line
+
+void append_to_file(student*, int, ofstream&);
+    put the data in the array into a output text file
+
+void swap_students(student*, int, int)
+
+
+void sort_by_id(student*, int)
+
+
+void sort_by_last_name(student*, int)
+
+
+void delete_student_db_info(student *)
+    delete dynamic array
+
+int main()
+    do the above, pretty much in order
