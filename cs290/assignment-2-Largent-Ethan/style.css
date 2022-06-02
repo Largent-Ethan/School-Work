@@ -1,0 +1,156 @@
+html * {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+body {
+    background-color: #eeeeee;
+    font-family: roboto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Title Styling*/
+
+.site-title {
+    background-color: #319df6;
+    color: #ffffff;
+    font-weight: 100;
+    padding: 5px 25px;
+}
+
+.site-title:visited {
+    color: #ffffff;
+}
+
+/*Navbar Styling*/
+
+.navbar {
+    background-color: #ffffff;
+    padding: 9px 25px;
+}
+
+.navlist {
+    list-style: none;
+}
+
+.navitem {
+    display: inline;
+}
+
+.navlink {
+    color: #000000;
+    text-align: center;
+    padding: 7px 10px;
+}
+
+.navlink a:visited {
+    color: #000000;
+}
+
+.navlink a:hover {
+    color: #319df6;
+}
+
+.active {
+    border-bottom: 3px solid #319df6;
+}
+
+.navbar-search {
+    float: right;
+    margin: -3px 10px 0px 0px;
+}
+
+#navbar-search-input{
+    background-color: #eeeeee;
+    padding: 4px 0px;
+    border: 0.75px solid #bbbbbb;
+    border-radius: 3px;
+}
+
+#navbar-search-button {
+    background: none;
+    font-size: 15px;
+    border: 0px;
+}
+
+#navbar-search-button:hover {
+    color: #319df6;
+}
+
+/*Twit Styling*/
+
+.twit-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px 100px;
+}
+
+.twit {
+    background-color: #ffffff;
+    display: flex;
+    flex: 0 30%;
+    min-width: 250px;
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 2.5px;
+}
+
+.twit-icon {
+    font-size: 26px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 10px;
+}
+
+.twit-content {
+    display: inline-block;
+    margin: 15px;
+}
+
+.twit-text {
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.twit-author {
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.twit-author a:visited {
+    color: #000000;
+}
+
+.twit-author a:hover {
+    color: #319df6;
+}
+
+/*Twit Button Styling*/
+
+#create-twit-button {
+    background-color: #f81619;
+    color: #ffffff;
+    box-shadow: 3px 3px 5px #aaaaaa;
+    font-size: 26px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+#create-twit-button:hover {
+    background-color: #319df6;
+    font-size: 30px;
+    bottom: 17px;
+    right: 17px;
+}

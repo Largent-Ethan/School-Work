@@ -1,0 +1,6 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['button'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<button type=\"button\" id=\"create-twit-button\"><i class=\"fas fa-bullhorn\"></i></button>\r\n\r\n<div id=\"modal-backdrop\" class=\"hidden\"></div>\r\n<div id=\"create-twit-modal\" class=\"hidden\">\r\n  <div class=\"modal-dialog\">\r\n\r\n    <div class=\"modal-header\">\r\n      <h3>Create a Twit</h3>\r\n      <button type=\"button\" class=\"modal-close-button\">&times;</button>\r\n    </div>\r\n\r\n    <div class=\"modal-body\">\r\n      <div class=\"twit-input-element\">\r\n        <label for=\"twit-text-input\">Twit text</label>\r\n        <textarea id=\"twit-text-input\"></textarea>\r\n      </div>\r\n      <div class=\"twit-input-element\">\r\n        <label for=\"twit-author-input\">Author</label>\r\n        <input type=\"text\" id=\"twit-author-input\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"modal-footer\">\r\n      <button type=\"button\" class=\"modal-cancel-button\">Cancel</button>\r\n      <button type=\"button\" class=\"modal-accept-button\">Create Twit</button>\r\n    </div>\r\n    \r\n  </div>\r\n    </div>";
+},"useData":true});
+})();
