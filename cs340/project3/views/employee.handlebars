@@ -1,0 +1,30 @@
+<h1>Company Database</h1>
+<h2>Current Employees:</h2>
+{{#each foo}}
+{{this}}
+{{/each}}
+<table>
+	<thead>
+    <tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Salary</th>
+		<th>Dno</th>
+    </tr>
+	</thead>
+    <tbody>
+        {{#each employees}}
+            <tr>
+                <td>{{Fname}}</td>
+                <td>{{Lname}}</td>
+				<td>{{Salary}}</td>
+				<td>{{Dno}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
+<footer>
+    <h3>by largenet</h3>
+</footer>
