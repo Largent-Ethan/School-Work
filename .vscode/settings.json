@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "cstring": "c",
+        "complex": "c",
+        "random": "c",
+        "stdio.h": "c",
+        "string.h": "c"
+    }
+}
