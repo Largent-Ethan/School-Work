@@ -1,0 +1,6 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['header'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<header>\r\n  <!-- The <i> tag below includes the lizard hand icon from Font Awesome.  Do not directly style this element. -->\r\n  <a href=\"#\"><h1 class=\"site-title\"><i class=\"far fa-hand-lizard\"></i> tweeter</h1></a>\r\n\r\n  <nav class=\"navbar\">\r\n    <ul class=\"navlist\">\r\n      <li class=\"navitem navlink active\"><a href=\"#\">Home</a></li>\r\n      <li class=\"navitem navlink\"><a href=\"#\">Trending</a></li>\r\n      <li class=\"navitem navlink\"><a href=\"#\">People</a></li>\r\n      <li class=\"navitem navbar-search\">\r\n        <input type=\"text\" id=\"navbar-search-input\" placeholder=\"Search...\">\r\n        <button type=\"button\" id=\"navbar-search-button\"><i class=\"fas fa-search\"></i></button>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</header>";
+},"useData":true});
+})();

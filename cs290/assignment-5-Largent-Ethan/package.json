@@ -1,0 +1,32 @@
+{
+  "name": "template-assignment-5",
+  "version": "1.0.0",
+  "description": "Handlebars templating",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "handlebars views/partials/twit.handlebars -f public/twit.js && handlebars views/partials/message404.handlebars -f public/message404.js && handlebars views/partials/button.handlebars -f public/button.js && handlebars views/partials/header.handlebars -f public/header.js",
+    "prestart": "npm run build",
+    "predev": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp22/template-assignment-5.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp22/template-assignment-5/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp22/template-assignment-5#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
