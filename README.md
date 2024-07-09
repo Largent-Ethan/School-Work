@@ -1,8 +1,8 @@
 # School-Work  
  
-### This repiratory contains all of my past school projects, some of which are not very intesting.  
+### This repiratory contains some of my past school projects, from the start of my schooling to the end.
   
-### Here are some of my more notable projects:  
+### Here are some of my early notable projects:  
 * ##### [Common Functions](https://github.com/Largent-Ethan/School-Work/tree/main/cs161/assignments/assignment2)  
 * ##### [Library Organizer](https://github.com/Largent-Ethan/School-Work/tree/main/cs162/assignments/assignment1)  
 * ##### [Crazy 8s](https://github.com/Largent-Ethan/School-Work/tree/main/cs162/assignments/assignment2)  
