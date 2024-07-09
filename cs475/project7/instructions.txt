@@ -1,0 +1,8 @@
+ssh submit-c.hpc.engr.oregonstate.edu
+
+module load slurm
+module load openmpi
+
+mpic++ -o proj7 proj7.cpp
+
+mpiexec -mca btl self,tcp -np 4 proj7

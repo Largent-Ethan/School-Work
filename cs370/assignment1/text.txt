@@ -1,0 +1,23 @@
+openssl enc -base64 -aes-256-cbc -e -in plain.txt -out cipher.txt -K bd3dd3bbf6cec43fc354c3bf1a86d0bd84809f8fa93772c8f8b719f0a08c8449 -iv 7f6989cb19f65b3e6fd13648f4e97fd5
+openssl enc -base64 -aes-256-cbc -d -in plain.txt -out cipher.txt -K 92130686a84beb6235f817078dd2164b834c50780f7a47532547cf16b95e17cd -iv 4315f3cfd364472031d5c7178b5e694e
+openssl enc -base64 -camellia-256-ecb -e -in plain.txt -out cipher.txt -K a5fee3dfcd1b53c769629c9b5a698b57810c14eed29f26dc4ed09be532e9dfe3
+openssl enc -base64 -camellia-256-ecb -d -in plain.txt -out cipher.txt -K 9b13f2ca7fdae3e7319ec4c09cd4a8db9eb8d55b484b9ddf5e3b1da9eedf8dce
+
+
+
+
+openssl enc -base64 -aes-128-cbc -e -in plain.txt -out encrypt1.txt -K 92130686a84beb6235f817078dd2164b834c50780f7a47532547cf16b95e17cd -iv 4315f3cfd364472031d5c7178b5e694e
+openssl enc -base64 -aes-128-cbc -e -in plain.txt -out encrypt2.txt -K 92130686a84beb6235f817078dd2164b834c50780f7a47532547cf16b95e17cd -iv 4315f3cfd364472031d5c7178b5e694e
+openssl enc -base64 -aes-128-cbc -e -in plain.txt -out encrypt3.txt -K 92130686a84beb6235f817078dd2164b834c50780f7a47532547cf16b95e17cd -iv 4315f3cfd364472031d5c7178b5e694f
+
+
+openssl dgst -sha256 plain.txt
+openssl dgst –sha256 -hmac "abcdefg" plain.txt
+
+openssl dgst -sha256 plain.txt
+
+
+openssl genrsa -out private-key.pem 512
+openssl genrsa -out private-key.pem 1024
+openssl genrsa -out private-key.pem 2048
+openssl genrsa -out private-key.pem 4096
